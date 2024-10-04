@@ -1,0 +1,85 @@
+.header{
+    .navbar-toggler{
+        height: 37px;
+        width: 37px;
+        border: 1px solid $secondary2-100;
+        .nuxt-icon {
+            font-size: 20px;
+            svg{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .nav__list{
+        .nav{
+            .nav-item{
+                position: relative;
+                .nav-link{
+                    color: $secondary2-100;
+                }
+                .nav-link:active{
+                    color: $secondary1-100 !important;
+                }
+                .nav-link:hover{
+                    color: $secondary1-100 !important;
+                }
+                .nav-link:hover::after{
+                    position: absolute;
+                    bottom: -20px;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    background-color: $secondary1-100;
+                    width: 20%;
+                    border-radius: 10px;
+                    content: "";
+                    height: 2px;
+                    transition: all 0.5s;
+                }
+                .nav-link:focus{
+                    color:$secondary1-100 !important;
+                }
+                .nav-link:focus::after{
+                    position: absolute;
+                    bottom: -20px;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    background-color: $secondary1-100;
+                    width: 20%;
+                    border-radius: 10px;
+                    content: "";
+                    height: 2px;
+                    transition: all 0.5s;
+                }
+            }
+        }
+    }
+    .header__logo{
+        .nuxt-icon {
+            svg {
+                height: 37px;
+                width: 87px;
+                margin-bottom: 0;
+            }
+        }   
+    }
+    .header__login{
+        @include setupFlex(flex,row,center,center);
+        .btn{
+            background-color:$secondary2-100 ;
+            color: $grayscale-0;
+            border: none;
+            padding: 6.5px 9.5px;
+            .nuxt-icon {
+                font-size: 18px;
+                svg{
+                    margin-bottom: 0;
+                }
+            }
+            .header__login-text{
+                @include font(IranSansX,14px,500);
+            }
+        }
+    }
+}

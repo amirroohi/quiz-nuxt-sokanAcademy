@@ -1,0 +1,194 @@
+.result{
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    max-width: 944px;
+    width: 100%;
+    margin: 100px auto;
+    @include font(IranSansX,14px,500);
+    .result__card{
+        border: 2px solid $grayscale-2;
+        border-radius: 20px;
+        padding: 36px;
+        .result__content{
+            width: 100%;
+            height: 100%;
+            row-gap: 28px;
+            @include setupFlex(flex,column,space-between,start);
+            .result__title{
+                @include font(IranYekanX,22px,700);
+            }
+            .result__description{
+                @include font(IranSansX,20px,700);
+                .nuxt-icon{
+                    margin-left: 12px;
+                    font-size: 32px;
+                }
+            }
+            .result__badges{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+                margin-bottom: 12px;
+                .question__status{
+                    position: relative;
+                    width: fit-content;
+                    border: 2px solid $grayscale-2;
+                    padding: 8px 12px;
+                    font-size: 16px;
+                    border-radius: 10px;
+                    @include setupFlex(flex,row,center,center);
+                    @include for-phone-only{
+                        font-size: 14px;
+                        padding: 6px 10px;
+                        border-radius: 8px;
+                    }
+                    .nuxt-icon{
+                        display: inline-block;
+                        font-size: 20px;
+                        line-height: 1;
+                        margin-left: 8px;
+                        @include for-phone-only{
+                            display: none;
+                        }
+                    }
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        display: inline-block;
+                        width: 6px;
+                        height: 24px;
+                        right: -2px;
+                        border-radius: 3px 0 0 3px;
+                        @include for-phone-only{
+                            height: 20px;
+                        }
+                    }
+                }
+                .correct{
+                    .nuxt-icon{
+                        color:$success-100 ;
+                    }
+                    &::before{
+                        background-color: $success-100;
+                    }
+                }
+                .wrong{
+                    .nuxt-icon{
+                        color:$error-100 ;
+                    }
+                    &::before{
+                        background-color: $error-100;
+                    }
+                }
+            }
+            .result__button{
+                padding: 10px 16px;
+                border: 1px solid $secondary2-100;
+                background-color: $grayscale-0;
+                border-radius: 10px;
+                @include font(IranSansX,16px,700);
+                @include setupFlex(flex,row,center,center);
+                @include for-phone-only{
+                    width: 100%;
+                }
+                span{
+                    display: inline-block;
+                }
+                .nuxt-icon{
+                    display: inline-block;
+                    margin-left: 8px;
+                    line-height: 1;
+                }
+            }
+            .emphasis{
+                background-color: $accent-100;
+                border: none;
+            }
+        }
+    }
+    .result__history{
+        padding: 36px;
+        border: 2px solid $grayscale-2;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 36px;
+        .result__title{
+            @include font(IranYekanX,22px,900); 
+        }
+        .result__description-wrapper{
+            padding-bottom: 36px;
+            border-bottom: 2px solid $grayscale-2;
+            .result__description{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                .nuxt-icon{
+                    color: $secondary2-100;
+                    background: $grayscale-3;
+                    font-size: 44px;
+                    padding: 11px;
+                    border-radius: 16px;
+                    @include for-phone-only{
+                        font-size: 36px;
+                    }
+                }
+                .great{
+                    color: $grayscale-0;
+                    background: linear-gradient(135deg, #FCBF17 0%, #FCA018 23.67%, #F34158 49.46%, #5636DE 74.86%, #24099A 100%);
+                }
+                .result__performance{
+                    @include font(IranSansX,20px,800);
+                    @include for-phone-only{
+                        @include font(IranSansX,18px,800,2);
+                    }
+                }
+            }
+            .result__participation{
+                @include font(IranSansX,16px,600);
+            }
+        }
+        .result__table-wrapper{
+            max-height: 400px;
+            scrollbar-width: thin;
+            .result__table{
+                @include font(IranSansX,16px,700);
+                padding-bottom: 28px;
+                line-height: 1.5;
+                min-width: 460px;
+                overflow-x: auto;
+                .result__table-item{
+                    width: 100%;
+                    background-color: $grayscale-2;
+                    padding: 10px 12px;
+                    border-radius: 10px;
+                    column-gap: 8px;
+                    flex-wrap: nowrap;
+                    text-wrap: nowrap;
+                    @include setupFlex(flex,row,center,center);
+                    @include for-phone-only{
+                        @include font(IranSansX,14px,500);
+                        padding: 8px;
+                        column-gap: 6px;
+                        .nuxt-icon{
+                            font-size: 18px;
+                        }
+                    }
+                }
+                .good{
+                    background-color: $success-10;
+                    color: $success-100;
+                }
+                .average{
+                    background-color: $warning-10;
+                    color: $warning-100;
+                }
+                .weak{
+                    background-color: $error-10;
+                    color: $error-100;
+                }
+            }
+        }
+    }
+}

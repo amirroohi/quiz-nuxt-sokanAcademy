@@ -1,0 +1,166 @@
+.question{
+    margin: 100px auto;
+    max-width: 944px;
+    width: 100%; 
+    padding: 36px;
+    border: 2px solid $grayscale-2;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    &__title{
+        width: 100%;
+        @include setupFlex(flex,row,space-between,center);
+        @include for-phone-only{
+            flex-direction: column;
+            align-items: start;
+        }
+        .question__title-text{
+            @include font(IranYekanX,22px,900);
+        }
+        .progress-count{
+            @include font(IranSansX,14px,500);
+        }
+        .progress-bar-container {
+            height: 6px;
+            width: 100px;
+            margin-right: 12px;
+            background: $grayscale-3;
+            border-radius: 3px;
+            position:relative; /* relative here */
+            .progress-bar-indicator {
+              height: 100%;
+              border-radius: 25px;
+               /* this will do the magic */
+              -webkit-mask:linear-gradient(#fff 0 0);
+                      mask:linear-gradient(#fff 0 0);
+            }
+            .progress-bar-indicator::before {
+              content:"";
+              position:absolute;
+              top:0;
+              left:0;
+              right:0;
+              bottom:0;
+              background: linear-gradient(90deg, #FCBF17 0%, #FCA018 23.67%, #F34158 49.46%, #5636DE 74.86%, #24099A 100%);
+            }
+          }
+    }
+    &__description{
+        @include font(IranSansX,14px,700);
+        span{
+            color: $grayscale-5;
+        }
+    }
+    &__choices{
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        margin-bottom: 12px;
+        .form-check{
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+            padding: 4px 0;
+            label,input{
+                float: none;
+                margin-left: 0;
+            }
+            .form-check-input{
+                width: 20px;
+                height: 20px;
+                &:focus{
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+            .form-check-label{
+                margin-right: 18px;
+                @include font(IranSansX,14px,500);
+                line-height: 2;
+                p{
+                    margin-bottom: 0;
+                }
+            }
+            .form-check-input[type="checkbox"]{
+                margin: 0;
+                width: 20px;
+                height: 20px;
+                box-shadow: none;
+                border: 2px solid $grayscale-5;
+                border-radius: 6px;
+            }
+            .form-check-input[type="checkbox"]:checked{
+                background-color: $secondary2-100;
+                background-image: url(/assets/icons/tick-white.svg);
+                border:$secondary2-100;
+            }
+            .accepted:checked{
+                background-color: $success-100 !important;
+                border:$success-100 !important;
+            }
+        }
+    }
+    &__answer{
+        width: 100%;
+        display: flex;
+        column-gap: 20px;
+        row-gap: 24px;
+        flex-wrap: wrap;
+        .question__btn{
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            background-color: $secondary2-100;
+            color: $grayscale-0;
+            font-size: 16px;
+            @include for-phone-only{
+                width: 100%;
+            }
+        }
+        .question__btn:disabled{
+            background-color: $grayscale-4;
+            color: $grayscale-3;
+        }
+        .question__status{
+            position: relative;
+            width: fit-content;
+            border: 2px solid $grayscale-2;
+            padding: 8px 12px;
+            font-size: 16px;
+            line-height: 1.5;
+            border-radius: 10px;
+            .nuxt-icon{
+                display: inline-block;
+                font-size: 20px;
+                margin-left: 8px;
+            }
+            .true{
+                color:$success-100 !important;
+
+            }
+            .false{
+                color:$error-100 !important;
+            }
+            &::before{
+                position: absolute;
+                display: inline-block;
+                content: "";
+                width: 6px;
+                height: 24px;
+                right: -2px;
+                border-radius: 3px 0 0 3px;
+            }
+        }
+        .correct{
+            &::before{
+                background-color: $success-100;
+            }
+        }
+        .wrong{
+            &::before{
+                background-color: $error-100;
+            }
+        }
+    }
+}

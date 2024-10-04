@@ -1,0 +1,87 @@
+.preview{
+    margin: 100px auto;
+    max-width: 944px;
+    row-gap: 32px;
+    width: 100%;
+    @include setupFlex(flex,column,space-between,baseline);
+    @include font(IranSansX,14px,500);
+    &__content{
+        width: 100%;
+        height: 100%;
+        row-gap: 28px;
+        @include setupFlex(flex,column,space-between,start);
+    }
+    &__card{
+        column-gap: 48px;
+        border: 2px solid $grayscale-2;
+        padding: 36px;
+        border-radius: 20px;
+        @include setupFlex(flex,row,space-between,center);
+        @include for-phone-only{
+            padding: 28px;
+        }
+    }
+    &__tips{
+        background-color: $grayscale-1;
+        padding: 36px;
+        border-radius: 20px;
+        row-gap: 20px;
+        @include setupFlex(flex,column,flex-start,start);
+        @include for-phone-only{
+            padding: 28px;
+        }
+    }
+    &__title{
+        @include font(IranYekanX,22px,700);
+    }
+    &__tiptitle{
+        @include font(IranYekanX,22px,700,2);
+    }
+    &__description{
+        line-height: 2;
+    }
+    &__tags{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+    &__tag{
+        display: inline-block;
+        padding: 8px 10px;
+        background-color: $grayscale-2;
+        border-radius: 8px;
+        text-wrap: nowrap;
+    }
+    &__tiplist{
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+    &__tipitem{
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+        .preview__tipitem-bullet{
+            display: inline-block;
+            padding: 5px;
+            border-radius: 3px;
+            background-color: $secondary1-100;
+        }
+    }
+    &__button{
+        padding: 10px 16px;
+        background-color: $accent-100;
+        border: none;
+        border-radius: 10px;
+        @include setupFlex(flex,row,center,center);
+        @include font(IranSansX,16px,700);
+        @include for-phone-only{
+            width: 100%;
+        }
+        .nuxt-icon{
+            margin-right: 8px;
+            color:$secondary2-100 ;
+        }
+    }
+}

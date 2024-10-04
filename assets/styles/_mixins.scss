@@ -1,0 +1,20 @@
+// mixins
+@mixin font($fontFamily,$fontSize,$fontWeight,$lineHeight:1.5){
+    font-family: $fontFamily;
+    font-size:$fontSize ;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+}
+@mixin setupFlex($display,$flexDirection,$justifyContent,$alignItems){
+    display: $display;
+    justify-content:$justifyContent ;
+    align-items: $alignItems;
+    flex-direction: $flexDirection;
+}
+
+@mixin for-phone-only {
+    @media (max-width: 768px) { @content; }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1000px) { @content; }
+}

@@ -1,0 +1,39 @@
+@import "bootstrap/scss/bootstrap";
+@import "variables";
+@import "fonts";
+@import "mixins";
+
+*,*::after,*::before{
+    list-style: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+body{
+    @include font(IranSansX,14px,500);
+    color: $secondary2-100;    
+    a{
+        text-decoration: none;
+        color: $secondary2-100;
+    }
+}
+h2,p{
+    margin-bottom: 0;
+}
+.nuxt-icon{
+    display: inline-block;
+    font-size: 20px;
+    line-height: 1;
+}
+svg{
+    margin-bottom: 0 !important;
+}
+button:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+@import "navbar";
+@import "footer";
+@import "preview";
+@import "question";
+@import "result";
